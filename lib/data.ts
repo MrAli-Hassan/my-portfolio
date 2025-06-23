@@ -72,11 +72,11 @@ export const projectsData = [
     linkedInUrl: "https://www.linkedin.com/in/mralihassan02/details/projects/",
     githubUrl: "https://github.com/Ali-Hassan02/Movie-Streaming-Website",
     videoUrls: [
-      "./demo/imdb1.mov",
-      "./demo/imdb2.mov",
-      "./demo/imdb3.mov",
-      "./demo/imdb4.mov",
-      "./demo/imdb5.mov",
+      "https://youtu.be/2oxWYaVgAlw",
+      "https://youtu.be/a_m9dGsqKr4",
+      "https://youtu.be/pvdZnQqgISM",
+      "https://youtu.be/ZGUmc6w9xxo",
+      "https://youtu.be/iayiWhdgPZg",
     ],
   },
   {
@@ -89,7 +89,7 @@ export const projectsData = [
     githubUrl:
       "https://github.com/Ali-Hassan02/AI-Powered-Web-for-Brain-Stroke-Segmentation",
 
-    videoUrls: ["./demo/brain-stroke-segmentation.mov"],
+    videoUrls: ["https://youtu.be/n4cRFxpJ6Mc"],
   },
   {
     title: "Mentor Mesh",
@@ -107,14 +107,9 @@ export const projectsData = [
     linkedInUrl: "https://www.linkedin.com/in/mralihassan02/details/projects/",
     githubUrl: "https://github.com/RidaZaidi05/Mentor-Mesh",
     videoUrls: [
-      "./demo/mentor-mesh1.mp4",
-      "./demo/mentor-mesh2.mp4",
-      "./demo/mentor-mesh3.mp4",
-      "./demo/mentor-mesh4.mp4",
-      "./demo/mentor-mesh5.mp4",
-      "./demo/mentor-mesh6.mp4",
-      "./demo/mentor-mesh7.mp4",
-      "./demo/mentor-mesh8.mp4",
+      "https://youtu.be/2YnwgYh8mu4",
+      "https://youtu.be/bAXbcPbSWco",
+      "https://youtu.be/2YnwgYh8mu4",
     ],
   },
 ] as const;

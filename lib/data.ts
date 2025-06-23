@@ -112,7 +112,7 @@ export const projectsData = [
       "https://youtu.be/2YnwgYh8mu4",
     ],
   },
-] as const;
+] ;
 
 
 export const skillsData = [

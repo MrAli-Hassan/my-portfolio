@@ -44,8 +44,33 @@ export default function Experience() {
                 fontSize: "1.5rem",
               }}
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
+              <div className="flex justify-between items-center">
+                <h3
+                  className={`font-bold capitalize ${
+                    theme !== "light" ? "text-white" : "dark:text-white/50"
+                  }`}
+                  style={
+                    theme !== "light"
+                      ? { textShadow: "0 0 0px #ffffff, 0 0 12px #ffffff" }
+                      : { textShadow: "0 0 0px #262222, 0 0 12px #262222" }
+                  }
+                >
+                  {item.organization}
+                </h3>
+
+                <span className="text-sm text-gray-400 dark:text-white/50">
+                  {item.location}
+                </span>
+              </div>
+              <p
+                className={`font-normal italic !mt-0 ${
+                  theme !== "light" ? "text-white" : "dark:text-white/50"
+                }`}
+                style={{ fontFamily: "Garamond, serif" }}
+              >
+                {item.title}
+              </p>
+
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {item.description}
               </p>

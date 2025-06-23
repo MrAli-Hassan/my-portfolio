@@ -5,10 +5,16 @@
 /.pnp
 .pnp.js
 
+
+public/demo/*.mp4
+public/demo/*.mov
+
+
 # testing
 /coverage
 
 # next.js
+.next/
 /.next/
 /out/
 

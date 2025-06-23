@@ -4,71 +4,54 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
-
+import { SiGmail } from "react-icons/si";
+import "./css/icons-animation.css"
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+
+  const gmailLink =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=mralihassan02@gmail.com";
 
   return (
     <motion.section
       id="contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
     >
       <SectionHeading>Contact me</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
         Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
-        </a>{" "}
-        or through this form.
+        <a
+          className="underline text-blue-600 hover:text-blue-800 transition"
+          href={gmailLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          mralihassan02@gmail.com
+        </a>
       </p>
 
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Email sent successfully!");
-        }}
-      >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+      {/* Gmail Icon */}
+      <div className="mt-6 flex justify-center">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=mralihassan02@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform hover:scale-110 social-icon rotating-border bg-white p-3 text-gray-700 hover:text-gray-950 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+          title="Email me via Gmail"
+        >
+          <img
+            src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico"
+            alt="Gmail Icon"
+            className="w-14 h-14"
+          />
+        </a>
+      </div>
     </motion.section>
   );
 }

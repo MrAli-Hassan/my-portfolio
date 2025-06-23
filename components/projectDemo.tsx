@@ -18,6 +18,13 @@ export default function ProjectDemo({ videoUrls }: { videoUrls: string[] }) {
     setCurrent((prev) => (prev === videoUrls.length - 1 ? 0 : prev + 1));
   };
 
+  function getYouTubeId(url: string) {
+    const regex =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : "";
+  }
+
   return (
     <div>
       {/* Trigger Button */}
@@ -74,11 +81,13 @@ export default function ProjectDemo({ videoUrls }: { videoUrls: string[] }) {
                   style={{ transform: `translateX(-${current * 100}%)` }}
                 >
                   {videoUrls.map((url, index) => (
-                    <video
+                    <iframe
                       key={index}
-                      src={url}
-                      controls
-                      className="w-full flex-shrink-0 rounded-lg shadow-lg"
+                      src={`https://www.youtube.com/embed/${getYouTubeId(url)}`}
+                      title={`YouTube video ${index}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-[360px] flex-shrink-0 rounded-lg shadow-lg"
                     />
                   ))}
                 </div>
